@@ -1,20 +1,20 @@
-#include <stdio.h> //ÇÃ·¹ÀÌ¾î¼öp,Á¤¿øm,·¹º§l,´Ğ³×ÀÓn
+#include <stdio.h> //í”Œë ˆì´ì–´ìˆ˜p,ì •ì›m,ë ˆë²¨l,ë‹‰ë„¤ì„n
 #include <string.h>
 
 int main() {
-	int p, m; //ÇÃ·¹ÀÌ¾î¼ö, Á¤¿ø
+	int p, m; //í”Œë ˆì´ì–´ìˆ˜, ì •ì›
 	int room[300][300];
 	int level[500];
 	char name[300][17];
-	int room_cnt = 0; //¹æÀÇ °³¼ö ¹è¿­
-	int room_size[300] = { 0 }; //ÇÃ·¹ÀÌ¾î ¼ö ¹è¿­
+	int room_cnt = 0; //ë°©ì˜ ê°œìˆ˜ ë°°ì—´
+	int room_size[300] = { 0 }; //í”Œë ˆì´ì–´ ìˆ˜ ë°°ì—´
 
-	scanf("%d %d", &p, &m); //ÀÔ·Â¹Ş±â
+	scanf("%d %d", &p, &m); //ì…ë ¥ë°›ê¸°
 	for (int i = 0; i < p; i++) {
 		scanf("%d %s", &level[i], &name[i]);
 	}
 
-	for (int i = 0; i < p; i++) { //ÇÃ·¹ÀÌ¾î ÀÔÀå
+	for (int i = 0; i < p; i++) { //í”Œë ˆì´ì–´ ì…ì¥
 		int placed = 0;
 		for (int j = 0; j < room_cnt; j++) {
 			if (room_size[j] < m && level[room[j][0]] - 10 <= level[i] && level[i] <= level[room[j][0]] + 10) {
